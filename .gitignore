@@ -2,9 +2,9 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-/Java-basic.iml
+*.iml
 *.idea
-.gitignore
+*.gitignore
 
 ### Eclipse ###
 .apt_generated
