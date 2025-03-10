@@ -3,6 +3,11 @@ package chap06;
 public class Animal {
     private String name; // 동물의 이름 필드
 
+    // 생성자
+    /*public Animal() {
+        this.name = "";
+    }*/
+
     // 이름 설정 메소드
     public void setName(String name) {
         this.name = name;
