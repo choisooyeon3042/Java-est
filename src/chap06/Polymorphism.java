@@ -1,5 +1,7 @@
 package chap06;
-
+/**
+ * Number 객체 다형성
+ */
 public class Polymorphism {
     public static void main(String[] args) {
         // class Integer extends Number ... {}

@@ -1,0 +1,8 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class Animal
+class Dog extends Animal
+class HouseDog extends Dog
+
+@enduml
