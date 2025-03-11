@@ -1,8 +1,15 @@
 package chap06.gettersetter;
 
+import chap06.Sample;
+
 public class Sonata {
     private int speed;
     private boolean stop;
+    private final Sample sample;
+
+    Sonata() {
+        sample = new Sample(100);
+    }
 
     void setSpeed(int speed) {
         if (speed < 0) {
