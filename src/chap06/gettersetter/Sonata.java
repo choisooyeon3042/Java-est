@@ -1,7 +1,9 @@
 package chap06.gettersetter;
 
 import chap06.Sample;
-
+/*
+* speed, stop 멤버 변수의 setter/getter 메소드
+* */
 public class Sonata {
     private int speed;
     private boolean stop;
@@ -51,3 +53,4 @@ public class Sonata {
         System.out.println("멈춤 후 속도: " + sonata.getSpeed());
     }
 }
+
