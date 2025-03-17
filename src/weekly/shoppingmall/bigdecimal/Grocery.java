@@ -1,4 +1,4 @@
-package weekly.bigdecimal;
+package weekly.shoppingmall.bigdecimal;
 
 import java.math.BigDecimal;
 
