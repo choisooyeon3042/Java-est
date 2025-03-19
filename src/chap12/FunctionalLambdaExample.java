@@ -32,7 +32,7 @@ public class FunctionalLambdaExample {
         }
         
         Predicate<String> emptyStr = x -> x.length() == 0;
-        System.out.println(emptyStr.test("짱구는 못말리자나아"));
+        System.out.println(emptyStr.test("짱구는 못말려"));
 
     }
 }
