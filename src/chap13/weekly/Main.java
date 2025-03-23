@@ -122,8 +122,8 @@ public class Main {
 
     // 전화번호 형식 유효성 010
     static boolean isValidPhoneNumber(String phoneNumber) {
-        String telNumber = "^010-\\d{4}-\\d{4}$";
-        return phoneNumber.matches(telNumber);
+        String phoneRegex = "^010-\\d{4}-\\d{4}$";
+        return phoneNumber.matches(phoneRegex);
     }
 
 }
