@@ -1,6 +1,5 @@
 package chap13.weekly;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -68,13 +67,28 @@ public class Main {
 
     // 기능2. 비즈니스 연락처 추가
     private static void addBusinessContact() {
-        System.out.print("이름을 입력하세요: ");
-        String name = sc.nextLine();
-        String phoneNumber;
 
+        String name;
+        while (true) {
+            System.out.print("이름을 입력하세요: ");
+            name = sc.nextLine().trim();
+
+            if (name.isEmpty()) {
+                System.out.println("이름을 입력해야 합니다.");
+            } else {
+                break;
+            }
+        }
+
+        String phoneNumber;
         while (true) {
             System.out.print("전화번호를 입력하세요 (010-0000-0000): ");
             phoneNumber = sc.nextLine().trim();
+
+            if (phoneNumber.isEmpty()) {
+                System.out.println("전화번호를 입력해야 합니다.");
+                continue;
+            }
 
             if (isValidPhoneNumber(phoneNumber)) {
                 break;
@@ -83,25 +97,45 @@ public class Main {
             }
         }
 
-        System.out.print("회사명을 입력하세요: ");
-        String company = sc.nextLine().trim();
+        String company;
+        while (true) {
+            System.out.print("회사명을 입력하세요: ");
+            company = sc.nextLine().trim();
 
-        if (Arrays.asList(name, phoneNumber, company).contains(" ")) {
-            System.out.println("모든 정보를 입력해야 합니다.");
-        } else {
-            addressBook.addContact(new BusinessContact(name, phoneNumber, company));
+            if (company.isEmpty()) {
+                System.out.println("회사명을 입력해야 합니다.");
+            } else {
+                break;
+            }
         }
+
+        addressBook.addContact(new BusinessContact(name, phoneNumber, company));
     }
 
     // 기능3. 개인 연락처 추가
     private static void addPersonalContact() {
-        System.out.print("이름을 입력하세요: ");
-        String name = sc.nextLine();
-        String phoneNumber;
 
+        String name;
+        while (true) {
+            System.out.print("이름을 입력하세요: ");
+            name = sc.nextLine().trim();
+
+            if (name.isEmpty()) {
+                System.out.println("이름을 입력해야 합니다.");
+            } else {
+                break;
+            }
+        }
+
+        String phoneNumber;
         while (true) {
             System.out.print("전화번호를 입력하세요 (010-0000-0000): ");
             phoneNumber = sc.nextLine().trim();
+
+            if (phoneNumber.isEmpty()) {
+                System.out.println("전화번호를 입력해야 합니다.");
+                continue;
+            }
 
             if (isValidPhoneNumber(phoneNumber)) {
                 break;
@@ -110,14 +144,19 @@ public class Main {
             }
         }
 
-        System.out.print("관계를 입력하세요: ");
-        String relationship = sc.nextLine().trim();
+        String relationship;
+        while (true) {
+            System.out.print("관계를 입력하세요: ");
+            relationship = sc.nextLine().trim();
 
-        if (Arrays.asList(name, phoneNumber, relationship).contains(" ")) {
-            System.out.println("모든 정보를 입력해야 합니다.");
-        } else {
-            addressBook.addContact(new PersonalContact(name, phoneNumber, relationship));
+            if (relationship.isEmpty()) {
+                System.out.println("관계를 입력해야 합니다.");
+            } else {
+                break;
+            }
         }
+
+        addressBook.addContact(new PersonalContact(name, phoneNumber, relationship));
     }
 
     // 전화번호 형식 유효성 010
