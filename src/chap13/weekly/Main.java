@@ -13,24 +13,20 @@ public class Main {
             menuProgram();
             int input = getInput();
 
-            try {
-                switch (input) {
-                    case 1 -> addBusinessContact();
-                    case 2 -> addPersonalContact();
-                    case 3 -> addressBook.displayContacts();
-                    case 4 -> {
-                        System.out.print("검색할 이름을 입력하세요: ");
-                        String name = sc.nextLine().trim();
-                        addressBook.searchContact(name);
-                    }
-                    case 5 -> {
-                        System.out.println("프로그램을 종료합니다.");
-                        return;
-                    }
-                    default -> System.out.print("메뉴 번호를 입력해주세요.");
+            switch (input) {
+                case 1 -> addBusinessContact();
+                case 2 -> addPersonalContact();
+                case 3 -> addressBook.displayContacts();
+                case 4 -> {
+                    System.out.print("검색할 이름을 입력하세요: ");
+                    String name = sc.nextLine().trim();
+                    addressBook.searchContact(name);
                 }
-            } catch (Exception e) {
-                System.out.println("Error 발생: " + e.getMessage());
+                case 5 -> {
+                    System.out.println("프로그램을 종료합니다.");
+                    return;
+                }
+                default -> System.out.print("메뉴 번호를 입력해주세요.");
             }
             System.out.println();
         }
